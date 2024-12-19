@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация пользователя</title>
+</head>
+<body style="font-family: 'Arial', sans-serif; margin: 0; padding: 0;">
+
+  <header style="background-color: #333; color: white; padding: 15px;">
+    <nav style="display: flex; justify-content: space-between;">
+      <a style="color: white; text-decoration: none;" href="{{ url_for('index') }}">Главная</a>
+      <a style="color: white; text-decoration: none;" href="/login">Логин</a>
+    </nav>
+  </header>
+
+  <main style="text-align: center; padding: 50px;">
+    <h1 style="color: #333;">Регистрация</h1>
+
+    <form method="post" action="{{ url_for('register') }}" style="display: inline-block; text-align: left;">
+      <label for="username" style="margin-bottom: 10px; display: block;">Имя:</label>
+      <input type="text" id="username" name="username" required style="padding: 8px; margin-bottom: 20px; width: 100%; box-sizing: border-box;">
+      
+      <label for="password" style="margin-bottom: 10px; display: block;">Пароль:</label>
+      <input type="password" id="password" name="password" required style="padding: 8px; margin-bottom: 20px; width: 100%; box-sizing: border-box;">
+
+      <button type="submit" style="padding: 10px; background-color: #333; color: white; border: none; cursor: pointer;">Зарегистрироваться</button>
+    </form>
+
+    {% if errors %}
+      <div class="error" style="color: red; margin-top: 20px;">
+        {{ errors }}
+      </div>
+    {% endif %}
+
+  </main>
+
+</body>
+</html>

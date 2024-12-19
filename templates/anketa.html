@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body style="font-family: 'Arial', sans-serif; margin: 0; padding: 0;">
+
+    <main style="text-align: center; padding: 50px;">
+
+        <h1 style="color: #333;">САЙТ ЗНАКОМСТВ</h1>
+        <h2 style="color: #333;">Анкета</h2>
+
+        <form action="{{ url_for('anketa') }}" enctype="multipart/form-data" method="POST" style="display: inline-block; text-align: left;">
+
+            <div style="margin-bottom: 20px;">
+                <label for="username" style="display: block; margin-bottom: 10px;">Имя:</label>
+                <input type="text" id="username" name="username" required style="padding: 8px; width: 100%; box-sizing: border-box;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="age" style="display: block; margin-bottom: 10px;">Возраст:</label>
+                <input type="text" id="age" name="age" required style="padding: 8px; width: 100%; box-sizing: border-box;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="gender" style="display: block; margin-bottom: 10px;">Ваш пол:</label>
+                <select id="gender" name="gender" required style="padding: 8px; width: 100%; box-sizing: border-box;">
+                    <option value="Мужчина">Мужской</option>
+                    <option value="Женщина">Женский</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="search_gender" style="display: block; margin-bottom: 10px;">Пол для поиска:</label>
+                <select id="search_gender" name="search_gender" required style="padding: 8px; width: 100%; box-sizing: border-box;">
+                    <option value="Мужчина">Мужской</option>
+                    <option value="Женщина">Женский</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="about_me" style="display: block; margin-bottom: 10px;">О себе:</label>
+                <textarea id="about_me" name="about_me" style="width: 100%; box-sizing: border-box;"></textarea>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="photo" style="display: block; margin-bottom: 10px;">Фотография:</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+            </div>
+            <div>
+                <input type="submit" value="Сохранить" style="padding: 10px; background-color: #333; color: white; border: none; cursor: pointer;">
+            </div>
+        </form>
+
+    </main>
+
+</body>
+</html>

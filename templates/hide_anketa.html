@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скрыть анкету</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="user-info">
+                <p>{{ username }}!</p>
+            </div>
+                <a href="{{ url_for('logout') }}">Выйти</a>
+            
+        </nav>
+        <h1 style="  color: #ff009d;
+        font-size: 200%; /* изменено: размер текста увеличен */
+        text-shadow: 3px 4px 5px  rgb(255, 255, 255);"></h1>
+    </header>
+
+    <main>
+        <h2>Скрыть анкету</h2>
+        <p>Вы уверены, что хотите скрыть свою анкету?</p>
+        <form method="post">
+            <button type="submit">Скрыть анкету</button>
+        </form>
+        <form method="get" action="{{ url_for('glav') }}">
+            <button type="submit">На главную</button>
+        </form>
+    </main>
+
+</body>
+</html>

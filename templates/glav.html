@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+</head>
+<body style="font-family: 'Arial', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh;">
+
+    <header style="background-color: #333; color: white; padding: 15px; position: relative;">
+        <div class="user-info">
+            <p style="margin: 0;">Имя пользователя: {{ username }}!</p>
+        </div>
+        <h1 style="margin: 0; text-align: center;">САЙТ ЗНАКОМСТВ</h1>
+    </header>
+
+    <main style="text-align: center; padding: 50px; flex: 1;">
+
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="display: inline-block; margin-right: 20px;"><a style="text-decoration: none; color: #333; padding: 10px; background-color: #eee; border-radius: 5px;" href="{{ url_for('edit_anketa') }}">Редактировать анкету</a></li>
+            <li style="display: inline-block; margin-right: 20px;"><a style="text-decoration: none; color: #333; padding: 10px; background-color: #eee; border-radius: 5px;" href="{{ url_for('hide_anketa') }}">Спрятать анкету</a></li>
+            <li style="display: inline-block; margin-right: 20px;"><a style="text-decoration: none; color: #333; padding: 10px; background-color: #eee; border-radius: 5px;" href="{{ url_for('view_anketa') }}">Просмотр анкет</a></li>
+            <li style="display: inline-block;"><a style="text-decoration: none; color: #333; padding: 10px; background-color: #eee; border-radius: 5px;" href="{{ url_for('delete_account') }}">Удалить аккаунт</a></li>
+        </ul>
+
+        <div style="margin-top: 40px; margin-bottom: 30px;"><a style="text-decoration: none; color: white; background-color: #333; color: white; padding: 10px; border-radius: 5px;" href="{{ url_for('logout') }}">Выйти</a></div>
+    </main>
+
+    <footer style="background-color: #333; color: white; padding: 15px; text-align: center; position: fixed; bottom: 0; width: 100%;">
+       <div><a style="text-decoration: none; color: white;">Выполнила Прыткова София ФБИ - 24</a></div>
+    </footer>
+</body>
+</html>

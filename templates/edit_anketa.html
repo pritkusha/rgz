@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменение анкеты</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+</head>
+<body>
+    <h1  style="  color: #0f0009;
+    font-size: 200%; /* изменено: размер текста увеличен */
+    text-shadow: 3px 4px 5px  rgb(255, 255, 255); text-align: center;">Изменение анкеты</h1>
+
+    <form method="post" action="{{ url_for('edit_anketa') }}" enctype="multipart/form-data">
+        <label for="new_age">Новый возраст:</label>
+        <input type="text" id="new_age" name="new_age" value="{{ current_anketa.age }}">
+        <br>
+        <label for="new_gender">Новый пол:</label>
+        <select id="new_gender" name="new_gender">
+            <option value="male" {% if current_anketa.gender == 'male' %}selected{% endif %}>Мужчина</option>
+            <option value="female" {% if current_anketa.gender == 'female' %}selected{% endif %}>Женшина</option>
+        </select>
+        <br>
+        <label for="new_search_gender">Поиск пола:</label>
+        <select id="new_search_gender" name="new_search_gender">
+            <option value="male" {% if current_anketa.search_gender == 'male' %}selected{% endif %}>Мужчина</option>
+            <option value="female" {% if current_anketa.search_gender == 'female' %}selected{% endif %}>Женшина</option>
+        </select>
+        <br>
+        <label for="new_about_me">Обо мне:</label>
+        <textarea id="new_about_me" name="new_about_me">{{ current_anketa.about_me }}</textarea>
+        <br>
+        <label for="photo">Новое фото:</label>
+        <input type="file" id="photo" name="photo">
+        <br>
+        <button  type="submit" value="Save">Сохранить</button>
+    </form>
+    <form method="get" action="{{ url_for('glav') }}">
+        <button type="submit">На главную</button>
+    </form>
+</body>
+</html>
